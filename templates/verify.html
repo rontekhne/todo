@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>ToDo | Verificação</title>
 </head>
 <body>
-    <h1>Verificação de Email</h1>
+    <img class="logo" src="{{ url_for('static', filename='images/todo_logo.png')}}" alt="ToDo logo">
+    <section class="verify">
+        <h1 class="verify-title">Verificação de E-mail</h1>
+        <p class="verify-alert">Insira o código de verificação que o ToDo da RonTekhne enviou para o e-mail {{ session.get('email') }}</p>
+        <form class="verify-form" action="{{ url_for('verify_email')}}" method="POST">
+            <input type="text" class="verify-code" name="code" placeholder="Código" required>
+            <button type="submit" class="verify-submit-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </form>
+    </section>
 
-    <form action="{{ url_for('verify_email')}}" method="POST">
-        <label for="code">Código de Verificação:</label>
-        <input type="text" name="code" required>
+    <footer class="verify-footer">
+        <p class="verify-footer-p">Já tem uma conta?</p>
+        <p><a class="verify-login-link" href="{{ url_for('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i></a></p>
+    </footer>
 
-        <button type=""submit>Verificar</button>
-    </form>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

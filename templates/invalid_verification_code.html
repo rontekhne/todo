@@ -8,17 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>ToDo | Email Verificado</title>
+    <title>ToDo | Verificação Inválida</title>
 </head>
 <body>
     <img class="logo" src="{{ url_for('static', filename='images/todo_logo.png')}}" alt="ToDo logo">
-    <h1 class="verify-success-title">Email verificado com sucesso!</h1>
+    <p class="verify-alert">Código de verificação inválido ou email não encontrado.</p>
 
-    <footer class="verify-success-footer">
-        <p class="verify-success-footer-p">Você já pode fazer login!</p>
-        <p><a class="verify-success-login-link" href="{{ url_for('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i></i></a></p>
+    <footer class="invalid-verification-footer">
+        <p class="invalid-verification-footer-p">Retorne à verificação de e-mail</p>
+        <p><a class="invalid-verification-verify-link" href="{{ url_for('verify_email') }}"><i class="fa fa-envelope-o" aria-hidden="true"></i></i></a></p>
     </footer>
-
+    
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

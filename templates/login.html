@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>ToDo | Entre</title>
 </head>
 <body>
-    <h1>Entrar</h1>
-    <form action="{{ url_for('login') }}" method="POST">
-        <label for="username">Nome:</label>
-        <input type="text" id="username" name="username" required>
+    <img class="logo" src="{{ url_for('static', filename='images/todo_logo.png')}}" alt="ToDo logo">
+    <section class="login">
+        <h1 class="login-title">Entre</h1>
+        <form class="login-form" action="{{ url_for('login') }}" method="POST">
+            <input type="text" id="login-username" class="login-username" name="username" placeholder="Nome de Usuário" required>
+            <input type="password" id="login-password" class="login-password" name="password" placeholder="Senha" required>
+            
+            <button type="submit" class="login-submit-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </form>
+    </section>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
+    <footer class="signup-footer">
+        <p class="login-footer-p">Não tem uma conta?</p>
+        <p><a class="signup-login-link" href="{{ url_for('register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></p>
+    </footer>
 
-        <button type="submit">Entrar</button>
-    </form>
-    ]
-    <a href="{{ url_for('register') }}">Não tem uma conta? Cadastre-se</a>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

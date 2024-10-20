@@ -1,0 +1,184 @@
+/* Arquivo CSS para o App ToDo 
+ * Pallete Blu:
+ * White:   #FFF 
+ * Lighter: #E2F1E7 
+ * Dark:    #387478
+ * Darker:  #243642
+ */
+
+ body {
+    background-color: #243642;
+    margin: 0;
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+ /* register.html, login.html, verify.html, verification_success.html */
+.signup,
+.login,
+.verify {
+    /*border: solid #FFF 1px;*/
+    padding: 1em;
+}
+
+.signup-title,
+.login-title,
+.verify-title,
+.verify-success-title {
+    text-align: center;
+    font-size: 30px;
+    color: #FFF;
+}
+
+.signup-form,
+.login-form,
+.verify-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verify-alert {
+    text-align: center;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.signup-username,
+.signup-email,
+.signup-password,
+.login-username,
+.login-password {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px;
+    background-color: #243642;
+    color: #FFF;
+    border: none;
+    border-bottom: solid #387478 1px;
+    width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.verify-code {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px;
+    background-color: #243642;
+    color: #FFF;
+    border: none;
+    border-bottom: solid #387478 1px;
+    width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.signup-username:focus,
+.signup-email:focus,
+.signup-password:focus,
+.login-username:focus,
+.login-password:focus,
+.verify-code:focus {
+    outline: none;
+}
+.terms {
+    font-size: 8px;
+    color: #E2F1E7;
+}
+
+.terms-link {
+    text-decoration: none;
+    color: #387478;
+}
+
+.signup-submit-btn,
+.login-submit-btn,
+.verify-submit-btn {
+    margin: 20px;
+    background-color: #243642;
+    border: none;
+}
+
+.fa-check {
+    cursor: pointer;
+    font-size: 24px;
+    color: #E2F1E7;
+    animation: pulse 1s infinite;
+}
+
+.signup-footer,
+.login-footer,
+.verify-footer,
+.invalid-verification-footer,
+.verify-success-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+    padding-bottom: 3em;
+}
+
+.signup-footer-p,
+.login-footer-p,
+.verify-footer-p,
+.invalid-verification-footer-p,
+.verify-success-footer-p {
+    color: #FFF;
+}
+
+.signup-login-link,
+.login-signup-link,
+.verify-login-link,
+.invalid-verification-verify-link,
+.verify-success-login-link {
+    text-decoration: none;
+}
+
+.fa-sign-in,
+.fa-user-plus,
+.fa-envelope-o {
+    cursor: pointer;
+    color: #E2F1E7;
+    font-size: 20px;  
+    animation: shake 2s ease infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.2); 
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .signup-username,
+    .signup-email,
+    .signup-password,
+    .login-username,
+    .login-password {
+        width: 40%;
+    }
+    .verify-code {
+        width: 10%;
+    }
+}

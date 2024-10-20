@@ -229,7 +229,7 @@ def verify_email():
             conn.close()
             return render_template('verification_success.html')
         else:
-            return 'Código d everificação inválido ou email não encontrado.'
+            return render_template('invalid_verification_code.html')
         
 
     return render_template('verify.html')

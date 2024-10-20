@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>ToDo | Cadastre-se</title>
 </head>
 <body>
-    <h1>Cadastre-se</h1>
-    <form action="{{ url_for('register') }}" method="POST">
-        <label for="username">Nome:</label>
-        <input type="text" id="username" name="username" required>
+    <img class="logo" src="{{ url_for('static', filename='images/todo_logo.png')}}" alt="ToDo logo">
+    <section class="signup">
+        <h1 class="signup-title">Cadastre-se</h1>
+        <form class="signup-form" action="{{ url_for('register') }}" method="POST">
+            <input type="text" id="signup-username" class="signup-username" name="username" placeholder="Nome de Usuário" required>
+            <input type="email" id="signup-email" class="signup-email" name="email" placeholder="E-mail" required>
+            <input type="password" id="signup-password" class="signup-password" name="password" placeholder="Senha" required>
+            
+            <p class="terms">Ao clicar no botão de cadastro abaixo automaticamente você concorda com os <a class="terms-link" href="">Termos de Uso</a></p>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <button type="submit" class="signup-submit-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </form>
+    </section>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <button type="submit">Cadastrar</button>
-    </form>
+    <footer class="signup-footer">
+        <p class="signup-footer-p">Já tem uma conta?</p>
+        <p><a class="signup-login-link" href="{{ url_for('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i></a></p>
+    </footer>
 
-    <a href="{{ url_for('login') }}"> Já tem uma conta? Faça Login</a>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
