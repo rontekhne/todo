@@ -1,0 +1,6 @@
+todo.db
+todo_add_admin.py
+.env
+__pycache__/
+*.pyc
+instance/

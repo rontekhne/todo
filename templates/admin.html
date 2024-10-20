@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Área Restrita</title>
+</head>
+<body>
+    <h1>Painel de Administração</h1>
+    <a href="{{ url_for('index') }}">Início</a> 
+
+    <h2>Usuários</h2>
+
+    <form action="{{ url_for('add_user') }}" method="POST">
+        <input type="text" name="username" placeholder="Nome de usuário", required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <label for="is_admin">É administrador?</label>
+        <select name="is_admin" id="is_admin">
+            <option value="false">Não</option>
+            <option value="true">Sim</option>
+        </select>
+        <button type="submit">Adicionar usuário</button>
+    </form>
+
+    <ul>
+        {% for user in users %}
+        <li>
+            {{ user[1] }}
+            <form action="{{ url_for('edit_user', id=user[0]) }}" method="POST">
+                <input type="text" name="username" placeholder="Nome de usuário" value="{{ user[1] }}" required>
+                <input type="email" name="email" placeholder="Email" value="{{ user[2] }}" required>
+                <input type="password" name="password" placeholder="Senha" value="{{ user[3] }}" required>
+                <label>
+                    <input type="checkbox" name="is_admin" {% if user[4] %}checked{% endif %}> Administrador
+                </label>
+                <button type="submit">Editar</button>
+            </form>
+            <a href="{{ url_for('delete_user', id=user[0]) }}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
