@@ -45,7 +45,8 @@
     align-items: center;
 }
 
-.verify-alert {
+.verify-alert,
+.invalid-login-alert {
     text-align: center;
     font-size: 14px;
     color: #FFF;
@@ -118,7 +119,8 @@
 .login-footer,
 .verify-footer,
 .invalid-verification-footer,
-.verify-success-footer {
+.verify-success-footer,
+.invalid-login-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -131,7 +133,8 @@
 .login-footer-p,
 .verify-footer-p,
 .invalid-verification-footer-p,
-.verify-success-footer-p {
+.verify-success-footer-p,
+.invalid-login-footer-p {
     color: #FFF;
 }
 
@@ -139,7 +142,8 @@
 .login-signup-link,
 .verify-login-link,
 .invalid-verification-verify-link,
-.verify-success-login-link {
+.verify-success-login-link,
+.invalid-login-login-link {
     text-decoration: none;
 }
 

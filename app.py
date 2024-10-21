@@ -256,7 +256,7 @@ def login():
             session['is_admin'] = user[4]
             return redirect(url_for('index'))
         else:
-            return 'Nome ou senha inválidos!'
+            return render_template('invalid_login.html')
         
     return render_template('login.html')
 
